@@ -1,0 +1,156 @@
+/* ========================== FONTS ========================== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+
+/* ========================== GLOBAL ========================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #121212;
+    color: #f4f4f4;
+    opacity: 0;
+    animation: fadePage 0.8s ease forwards;
+}
+
+@keyframes fadePage { to { opacity: 1; } }
+
+/* ========================== HEADER ========================== */
+.header {
+    width: 100%;
+    padding: 20px 40px;
+    background-color: #1e1e1e;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    animation: slideDown 0.7s ease forwards;
+}
+
+@keyframes slideDown { from { transform: translateY(-30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+/* ========================== BACK BUTTON ========================== */
+.back-btn {
+    display: inline-block;
+    margin: 20px 0 10px 20px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    color: #fafafa;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.25s ease;
+}
+
+.back-btn:hover {
+    color: #ff4d4f;
+}
+
+/* ========================== CONTACT ========================== */
+.contact-container {
+    max-width: 1000px;
+    margin: 150px auto;
+    padding: 0 20px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 0.9s ease forwards;
+    animation-delay: 0.3s;
+}
+
+@keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+.contact-container h2 {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.contact-container p {
+    margin-bottom: 50px;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 60px;
+}
+
+.contact-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1e1e1e;
+    padding: 20px;
+    width: 140px;
+    box-shadow: 0 2px 6px rgba(255,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+    color: #f4f4f4;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: linkAppear 0.7s ease forwards;
+}
+
+.contact-link:nth-child(1) { 
+    animation-delay: .4s; 
+}
+
+.contact-link:nth-child(2) { 
+    animation-delay: .55s; 
+}
+
+.contact-link:nth-child(3) { 
+    animation-delay: .7s; 
+}
+
+@keyframes linkAppear { to { opacity: 1; transform: translateY(0); } }
+
+.contact-link img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.contact-link span {
+    font-weight: 600;
+}
+
+.contact-link:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 8px #ff4d4f, 0 0 16px #ff4d4f;
+}
+
+.contact-link.whatsapp:hover { 
+    background-color: #25D366; 
+    color: #fff; 
+    box-shadow: 0 0 8px #25D366, 0 0 16px #25D366; 
+}
+
+.contact-link.instagram:hover { 
+    background-color: #E1306C; color: #fff; box-shadow: 0 0 8px #E1306C, 0 0 16px #E1306C; 
+}
+
+.contact-link.tiktok:hover { 
+    background-color: #00a2ff; 
+    color: #fff; 
+    box-shadow: 0 0 8px #00a2ff, 0 0 16px #fff; 
+}
+
+/* ========================== RESPONSIVE ========================== */
+@media(max-width:768px){
+    .contact-links { 
+        gap: 15px; 
+    }
+
+    .contact-link { 
+        width: 120px; padding: 15px; 
+    }
+
+    .contact-link img { 
+        width: 40px; height: 40px; 
+    }
+}

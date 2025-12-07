@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout - ZURE</title>
+    <link rel="stylesheet" href="checkout.css">
+      <!-- Favicon -->
+    <link rel="icon" type="image/png" href="icon.png">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-container">
+            <nav class="nav">
+                <a href="cart.html">
+                    <p class="nav-item">← Back</p>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CHECKOUT SECTION -->
+    <section class="checkout">
+        <h2>Buyer Details</h2>
+
+        <div class="container-input">
+            <input id="name" placeholder="Nama Lengkap" class="checkout-items">
+            <input id="phone" placeholder="Nomor WhatsApp" class="checkout-items">
+            <input id="address" placeholder="Alamat Lengkap" class="checkout-items">
+        </div>
+
+        <button onclick="getLocation()" class="btn-secondary">Enable Auto Location</button>
+
+        <h2 class="summary">Order Summary</h2>
+        <div id="checkout-items"></div>
+        <h3 id="checkout-total">Total: Rp 0</h3>
+
+        <button onclick="sendToWhatsapp()" class="btn">Share on WhatsApp</button>
+    </section>
+
+    <script src="cart.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", loadCheckoutPage);
+    </script>
+
+</body>
+</html>

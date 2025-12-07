@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail - ZURE</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="detail.css">
+      <!-- Favicon -->
+    <link rel="icon" type="image/png" href="icon.png">
+</head>
+<body class="dark-mode">
+
+    <!-- BACK BUTTON -->
+    <div class="back-btn" onclick="goBack()">← Back</div>
+
+    <div class="container">
+        <div class="left">
+            <img id="product-img" alt="Product Image">
+        </div>
+
+        <div class="right">
+            <h2 id="product-name"></h2>
+            <p id="product-desc">High quality furniture product.</p>
+            <div class="price" id="product-price"></div>
+
+            <div class="btn-box">
+                <button class="btn buy" onclick="addCurrentToCart()">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="detail.js"></script>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

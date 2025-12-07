@@ -1,0 +1,470 @@
+/* ========================== FONTS ========================== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+
+/* ========================== GLOBAL ========================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    opacity: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    animation: fadePage 0.8s ease forwards;
+}
+
+/* TRANSITION HALUS */
+.header, .scroll-wrapper p, .see-all p, .map-section, .cta-btn, .footer-1, .footer-nav p, .social-links img {
+    transition: background-color 0.3s ease, color 0.3s ease, filter 0.3s ease;
+}
+
+/* ========================== ANIMATIONS ========================== */
+@keyframes fadePage { to { opacity: 1; } }
+@keyframes slideDown { from { transform: translateY(-30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes cardAppear { to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeFooter { to { opacity: 1; transform: translateY(0); } }
+@keyframes pulse { 0%,100%{transform:scale(1);}50%{transform:scale(1.07);} }
+
+/* ========================== HEADER ========================== */
+.header {
+    width: 100%;
+    padding: 20px 40px;
+    background-color: #f4f4f43a;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    animation: slideDown 0.7s ease forwards;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    font-size: 24px;
+    color: #333;
+    padding: 3px;
+    font-family: "Cinzel", serif;
+    transition: 0.3s ease;
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-item {
+    cursor: pointer;
+    color: #333;
+    font-weight: 500;
+    transition: all 0.25s ease;
+    padding: 5px;
+}
+
+.nav-item:hover { 
+    background-color: red; 
+    color: #fff; 
+}
+
+.nav a { 
+    text-decoration: none; 
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%;    
+    object-fit: cover;   
+    z-index: -1;     
+    filter: brightness(90%);
+}
+
+
+/* ========================== FEATURE CARDS ========================== */
+.scroll-wrapper {
+    width: 100%;
+    height: 100vh;
+    padding-top: 30px;
+}
+
+.scroll-gallery {
+    display: flex;
+    gap: 0;
+    height: 350px;
+    padding-top: 100px;
+    align-items: center;
+    justify-content: center;
+}
+
+.item {
+    width: 80px;
+    height: 150%;
+    flex-shrink: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    border: 1px solid #F4f4f4;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: cardAppear 0.7s ease forwards;
+}
+
+.item:nth-child(1) { 
+    animation-delay: .1s; 
+}
+
+.item:nth-child(2) { 
+    animation-delay: .2s; 
+}
+
+.item:nth-child(3) { 
+    animation-delay: .3s; 
+}
+
+.item:nth-child(4) { 
+    animation-delay: .4s; 
+}
+
+.item:nth-child(5) { 
+    animation-delay: .5s; 
+}
+
+.item img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+.item:hover { 
+    width: 10%; 
+}
+
+.item.active { 
+    width: 180px !important; 
+}
+
+.scroll-wrapper p {
+    background-color: #F4f4F4;
+    color: #333;
+    font-family: "Montserrat", sans-serif;
+    padding: 0 10px;
+    transition: all 0.25s ease;
+}
+
+.scroll-wrapper p:hover { 
+    background-color: red; 
+    color: #fff; 
+}
+
+.see-all {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 0;
+    cursor: pointer;
+}
+
+.see-all a { 
+    text-decoration: none; 
+    color: inherit; 
+}
+
+.see-all p { 
+    margin: 0; 
+    color: #121212;
+    text-align: center; 
+    padding: 3px; 
+    background-color: transparent;
+}
+
+.see-all p:hover { 
+    background-color: red; 
+    color: #fff; 
+}
+
+/* ========================== MAP SECTION ========================== */
+.map-section {
+    padding: 150px 20px;
+    background-color: #F4f4F4;
+    height: 90vh;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 0.9s ease forwards;
+    animation-delay: 0.4s;
+}
+
+.map-container {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.map-text { 
+    max-width: 400px; 
+}
+.map-text h3 { 
+    font-weight: 700; 
+    margin-bottom: 10px; 
+    font-size: 40px; 
+}
+
+.map-text p { 
+    margin-bottom: 30px; 
+    line-height: 1.5; 
+}
+
+.cta-btn {
+    padding: 10px 20px;
+    font-weight: 600;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.cta-btn:hover { 
+    background-color: red; 
+    transform: translateY(-2px); 
+    color: #fff; 
+}
+
+.theme-btn {
+    padding: 10px 10px;
+    font-weight: 600;
+    border-radius: 200px;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.theme-btn:hover { 
+    background-color: red; 
+    transform: translateY(-2px); 
+    color: #fff; 
+}
+
+.map-box iframe {
+    width: 400px;
+    height: 250px;
+    border-radius: 12px;
+    border: 0;
+}
+
+/* ========================== FOOTER ========================== */
+.footer-1 {
+    background-color: #0a0a0a;
+    color: #fff;
+    padding: 80px 20px;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeFooter 1s ease forwards;
+    animation-delay: 0.5s;
+}
+
+.footer-wrapper { 
+    max-width: 1200px; margin: 0 auto; 
+}
+
+.footer-container {
+    display: flex; 
+    flex-direction: column; 
+    gap: 30px; 
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-content .company { 
+    font-weight: 700; 
+    margin-bottom: 5px; 
+    line-height: 30px; 
+    letter-spacing: 2px; 
+}
+
+.footer-content .description { 
+    font-size: 14px; 
+    color: #fff; 
+}
+
+.footer-nav {
+    display: flex;
+    gap: 40px;
+    font-size: 15px;
+    flex-wrap: wrap;
+}
+
+.footer-nav .nav-column-socialmedia,
+.footer-nav .nav-column-support {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.nav-header-socialmedia,
+.nav-header-support { font-weight: 700; margin-bottom: 5px; }
+
+.footer-nav p {
+    display: inline-block;
+    color: #fff;
+    transition: all 0.25s ease;
+    margin: 0;
+    padding: 2px 4px;
+}
+
+.footer-nav p:hover { 
+    background-color: red; 
+    color: #fff; 
+}
+.footer-nav a {
+    text-decoration: none; 
+}
+.footer-border {
+    height: 1px; 
+    background-color: #0a0a0a; 
+    margin-top: 20px; 
+}
+
+/* ========================== WHATSAPP FLOAT BUTTON ========================== */
+.whatsapp-float {
+    position: fixed;
+    bottom: 50px;
+    right: 1250px;
+    width: 50px;
+    height: 50px;
+    z-index: 1000;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.whatsapp-float img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.whatsapp-float:hover { 
+    transform: scale(1.1); 
+}
+/* ========================== RESPONSIVE ========================== */
+@media (max-width: 768px) {
+    .header-container { 
+        flex-direction: column; 
+        gap: 10px; 
+    }
+    .scroll-gallery { 
+        padding-left: 20px; 
+    }
+    .map-container { 
+        flex-direction: column; 
+        align-items: center; 
+        gap: 20px; 
+    }
+    .map-box iframe { 
+        width: 100%; 
+        height: 250px; 
+    }
+    .footer-content { 
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center; 
+    }
+    .footer-nav { 
+        justify-content: center; 
+    }
+}
+
+/* ========================== DARK MODE ========================== */
+body.dark-mode {
+    background-color: #121212;
+    color: #e5e5e5;
+}
+
+body.dark-mode .header { 
+    background-color: #1e1e1e36; 
+    box-shadow: 0 2px 5px rgba(255,255,255,0.05); 
+}
+
+body.dark-mode .brand {
+    color: #ffffff !important;
+}
+
+body.dark-mode.brand, body.dark-mode .nav-item { 
+    color: #e5e5e5; 
+}
+
+body.dark-mode .scroll-wrapper p { 
+    background-color: #1e1e1e; 
+    color: #e5e5e5; 
+}
+body.dark-mode .scroll-wrapper p:hover {
+    background-color: red; 
+    color: #fff; 
+}
+
+body.dark-mode .see-all p {
+    background-color: transparent !important;
+    color: #121212 !important;
+}
+
+body.dark-mode .see-all p:hover {
+    background-color: red !important;
+    color: #fff !important;
+}
+
+body.dark-mode .item {
+    border: 1px solid #1e1e1e; 
+}
+
+body.dark-mode .map-section {
+    background-color: #1e1e1e; 
+}
+
+body.dark-mode .cta-btn {
+    color: #e5e5e5; 
+}
+
+body.dark-mode .footer-1 {
+    background-color: #000; 
+    color: #fff; 
+}
+
+body.dark-mode .footer-nav p {
+    color: #fff; 
+    }
+
+/* ================= DARK MODE BUTTONS ================= */
+body.dark-mode .cta-btn {
+    background-color: #1e1e1e36;
+    color: #e5e5e5 !important;
+    border: none;
+}
+
+body.dark-mode .cta-btn:hover {
+    background-color: red;
+    color: #fff !important;
+}
+
+body.dark-mode .map-text h3,
+body.dark-mode .map-text p {
+    color: #e5e5e5;
+}
